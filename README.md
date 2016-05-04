@@ -12,6 +12,10 @@ cmake . -DWITH_SSL=bundled (from inside the MYSQL source code directory)
 ```
 Then run the standard make -- make install
 
+###SHA256 sum
+$ shasum -a 256 wolfssl-mysql-5.6.30.patch.zip
+7df65d141a645c46f7db9de74d5e111657819c6d411562f0afbdf3a293c678a9
+
 ####Product Licensing for wolfSSL
 
 wolfSSL’s software is available under two distinct licensing models: open source and standard commercial licensing.
