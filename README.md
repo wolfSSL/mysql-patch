@@ -1,10 +1,12 @@
 # mysql-patch
 patch for mysql with updated wolfSSL
 
-To run patch copy mysql-5.6.22-wolfssl.patch into the same directory with current MYSQL source code. (On mac this is something like /usr/local/src/)
+MYSQL 5.6.30 can be found at https://dev.mysql.com/downloads/mysql/. Click on "Looking for previous GA versions?" and select platform "source code". This patch was done on the Generic Linux (Architecture Independent), Compressed TAR Archive bundle.
+
+To run patch copy wolfssl-mysql-5.6.30.patch into the same directory with current MYSQL source code. (On mac this is something like /usr/local/src/)
 From the terminal in the same direcotry containing current MYSQL source code run
 ```
-    patch -s -p1 < <directory of>/mysql-5.6.22-wolfssl.patch
+    patch -p1 < <directory of>/wolfssl-mysql-5.6.30.patch
 ```
 To build using updated SSL make MYSQL with the command
 ```
