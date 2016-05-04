@@ -6,7 +6,7 @@ MYSQL 5.6.30 can be found at https://dev.mysql.com/downloads/mysql/. Click on "L
 To run patch copy wolfssl-mysql-5.6.30.patch into the same directory with current MYSQL source code. (On mac this is something like /usr/local/src/)
 From the terminal in the same direcotry containing current MYSQL source code run
 ```
-    patch -p1 < <directory of>/wolfssl-mysql-5.6.30.patch
+    patch -p1 < [directory of]/wolfssl-mysql-5.6.30.patch
 ```
 To build using updated SSL make MYSQL with the command
 ```
