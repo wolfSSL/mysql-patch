@@ -1,22 +1,28 @@
 # mysql-patch
 patch for mysql with updated wolfSSL
 
-MYSQL 5.6.30 can be found at https://dev.mysql.com/downloads/mysql/. Click on "Looking for previous GA versions?" and select platform "source code". This patch was done on the Generic Linux (Architecture Independent), Compressed TAR Archive bundle.
+MYSQL 5.6.30 can be found at downloads.mysql.com/archives/community/.
+Select version "5.6.30" and select platform "source code". This patch was done on the Generic Linux (Architecture Independent), Compressed TAR Archive bundle. mysql-5.6.30.tar.gz
 
-To run patch copy wolfssl-mysql-5.6.30.patch into the same directory with current MYSQL source code. (On mac this is something like /usr/local/src/)
+To run the patch, copy wolfssl-mysql-5.6.30.patch into the same directory with current MYSQL source code.
 From the terminal in the same direcotry containing current MYSQL source code run
 ```
     patch -p1 < [directory of]/wolfssl-mysql-5.6.30.patch
 ```
 To build using updated SSL make MYSQL with the command
 ```
-cmake . -DWITH_SSL=bundled (from inside the MYSQL source code directory)
+cmake . -DBUILD_CONFIG=mysql_release -DWITH_SSL=bundled (from inside the MYSQL source code directory)
 ```
-Then run the standard make -- make install
+Then run the standard make && sudo make install
+
+Note: When building on Linux CFLAGS="-g1" may be needed to work around a Binutils bug. To build then it would be the command
+```
+CFLAGS="-g1" cmake . -DBUILD_CONFIG=mysql_release -DWITH_SSL=bundled
+```
 
 ###SHA256 sum
 $ shasum -a 256 wolfssl-mysql-5.6.30.patch.zip
-7df65d141a645c46f7db9de74d5e111657819c6d411562f0afbdf3a293c678a9
+0fb2a0e53e8741b05ace851e6eab814fa90016e96fc2f4f9dc00e70c992079b4
 
 ####Product Licensing for wolfSSL
 
