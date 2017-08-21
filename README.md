@@ -1,3 +1,5 @@
+# Updated version of the patch comming shortly
+
 # mysql-patch
 patch for mysql with updated wolfSSL
 
