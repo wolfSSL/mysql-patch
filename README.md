@@ -1,17 +1,15 @@
-# Updated version of the patch comming shortly
-
 # mysql-patch
 patch for mysql with updated wolfSSL
 
-MYSQL 5.6.30 can be found at downloads.mysql.com/archives/community/.
-Select version "5.6.30" and select platform "source code". This patch was done on the Generic Linux (Architecture Independent), Compressed TAR Archive bundle. mysql-5.6.30.tar.gz
+MYSQL 8.0.0 can be found at downloads.mysql.com/archives/community/.
+Select version "8.0.0" and select platform "source code". This patch was done on the Generic Linux (Architecture Independent), Compressed TAR Archive bundle. mysql-8.0.0.tar.gz
 
-To run the patch, copy wolfssl-mysql-5.6.30.patch into the same directory with current MYSQL source code.
+To run the patch, copy wolfssl-mysql-8.0.0.patch into the same directory with current MYSQL source code.
 From the terminal in the same direcotry containing current MYSQL source code run
 ```
-    patch -p1 < [directory of]/wolfssl-mysql-5.6.30.patch
+    patch -p1 < [directory of]/wolfssl-mysql-8.0.0.patch
 ```
-To build using updated SSL make MYSQL with the command
+Replace the mysql-8.0.0/extra/yassl directory with wolfssl and follow steps in wolfssl/IDE/MYSQL direcotry. Next to build using updated SSL make MYSQL with the command
 ```
 cmake . -DBUILD_CONFIG=mysql_release -DWITH_SSL=bundled (from inside the MYSQL source code directory)
 ```
@@ -23,8 +21,8 @@ CFLAGS="-g1" cmake . -DBUILD_CONFIG=mysql_release -DWITH_SSL=bundled
 ```
 
 ###SHA256 sum
-$ shasum -a 256 wolfssl-mysql-5.6.30.patch.zip
-0fb2a0e53e8741b05ace851e6eab814fa90016e96fc2f4f9dc00e70c992079b4
+$ shasum -a 256 wolfssl-mysql-8.0.0.patch.zip
+b1309074f23052e5230920031347804a8065d7537e70a4d67d0daa3f40be1c46
 
 ####Product Licensing for wolfSSL
 
@@ -37,3 +35,7 @@ CyaSSL, yaSSL, wolfCrypt, yaSSH and TaoCrypt software are free software download
 ###Commercial Licensing
 
 Businesses and enterprises who wish to incorporate wolfSSL products into proprietary appliances or other commercial software products for re-distribution must license commercial versions. For more information about commercial licensing visit www.wolfssl.com
+
+###Questions?
+Contact info@wolfssl.com for questions.
+
